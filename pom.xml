@@ -2,13 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-	<groupId>edu.stanford.protege</groupId>
-	<artifactId>protege.plugin.examples</artifactId>
-	<version>2.0.0-SNAPSHOT</version>
+	<groupId>de.pooky</groupId>
+	<artifactId>protege.plugin.fileBrowser</artifactId>
+	<version>1.0.0</version>
 	<packaging>bundle</packaging>
 
-	<name>Protege Plugin Examples</name>
-	<description>Example plug-ins for the Protege Desktop ontology editor, e.g., views, menu items, etc.</description>
+	<name>Show in File Browser</name>
+	<description>Adds a menu item to the File menu that reveals the currently opened ontology file in the file browser (if it was loaded from the local file system)</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,7 +18,7 @@
         <dependency>
 			<groupId>edu.stanford.protege</groupId>
             <artifactId>protege-editor-owl</artifactId>
-			<version>5.0.0</version>
+			<version>5.5.0</version>
         </dependency>
 	</dependencies>
 
@@ -36,7 +36,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
+				<version>3.8.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -55,20 +55,12 @@
 						<Bundle-SymbolicName>${project.artifactId};singleton:=true</Bundle-SymbolicName>
 						<Bundle-Vendor>The Protege Development Team</Bundle-Vendor>
 						<Import-Package>
-							org.protege.editor.owl.*;version="5.0.0", <!-- equivalent to [5.0.0,infinity) -->
+							org.protege.editor.owl.*;version="5.5.0", <!-- equivalent to [5.5.0,infinity) -->
 							*
 						</Import-Package>
 					</instructions>
 				</configuration>
             </plugin>
-            
-			<plugin>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<pde>true</pde>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 </project>
