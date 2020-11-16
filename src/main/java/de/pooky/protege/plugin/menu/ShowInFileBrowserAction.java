@@ -49,7 +49,7 @@ public class ShowInFileBrowserAction extends ProtegeOWLAction implements OWLMode
 						}
 					} else if (OSUtils.isWindows()) {
 						try {
-							Runtime.getRuntime().exec(new String[] { "explorer.exe", ontologyFile.getAbsolutePath() } );
+							Runtime.getRuntime().exec(new String[] { "explorer.exe", "/select,\"" + ontologyFile.getAbsolutePath() + "\"" } );
 						} catch (IOException e) {
 							log.error("Could not show file in Explorer" , e);
 						}
@@ -78,7 +78,6 @@ public class ShowInFileBrowserAction extends ProtegeOWLAction implements OWLMode
 					// Enable/disable menu item depending on whether currently active ontology file is stored locally or not
 					WorkspaceFrame frame = ProtegeManager.getInstance().getFrame(getWorkspace());
 					while (frame == null) {
-						log.info("Theres no flipping frame yet, you tilting shovel!");
 						try {
 							Thread.sleep(500);
 						} catch (InterruptedException e) {
@@ -99,7 +98,6 @@ public class ShowInFileBrowserAction extends ProtegeOWLAction implements OWLMode
 							break;
 						}
 					}
-					log.info("Yay. I flipped the flipping switch!");
 				}).start();
 			}
 		} catch (Throwable t) {
