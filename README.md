@@ -8,4 +8,4 @@ Clicking on it reveals the currently active ontology in the operating system's f
 
 ## Installation
 
-Copy the jar file to your Protégé plugin folder (`<protege install path>/Java/plugins` or under macOS `<protege application bundle path>/Contents/Java/plugins`) and (re-)start Protégé.
+Copy the jar file to your Protégé plugin folder (`<protege install path>/plugins` or under macOS `<protege application bundle path>/Contents/Java/plugins`) and (re-)start Protégé.
